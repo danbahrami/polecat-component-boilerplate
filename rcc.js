@@ -6,12 +6,13 @@ var getFileList = require('./utilities/get-file-list');
 var printOutput = require('./utilities/print-output');
 
 program
-  .version('0.0.1')
-	.arguments('<path> <name>')
-	.option('-c, --connected', 'Add a Redux connector')
-	.option('-s, --styled', 'Add an associated .scss file')
+  .version('1.0.0')
+  .arguments('<path> <name>')
+  .option('-c, --connected', 'Add a Redux connector')
+  .option('-s, --styled', 'Add an associated .scss file')
   .parse(process.argv);
 
+var command = program._name;
 var path = program.args[0];
 var componentName = pascalCase(program.args[1]);
 var fileName = paramCase(program.args[1]);

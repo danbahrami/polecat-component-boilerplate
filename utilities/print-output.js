@@ -1,17 +1,17 @@
 var paramCase = require('param-case');
 
 module.exports = function (path, componentName, files) {
-	var fileName = paramCase(componentName);
+  var fileName = paramCase(componentName);
 
-	console.log('Template created for ' + componentName + ':');
-	console.log(path);
-	console.log('├── ...');
-	console.log('├── ' + fileName);
+  console.log('Template created for ' + componentName + ':');
+  console.log(path);
+  console.log('├── ...');
+  console.log('├── ' + fileName);
 
-	files.sort().map(function (file, index) {
-		var structure = (index === files.length -1) ? '│   └── ' : '│   ├── ';
-	  console.log(structure + file);
-	});
+  files.sort().map(function (file, index) {
+    var structure = (index === files.length -1) ? '│   └── ' : '│   ├── ';
+    console.log(structure + file);
+  });
 
-	console.log('└── ...');
+  console.log('└── ...');
 }
