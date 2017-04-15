@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import $NAME$ from './$FILE_NAME$';
+import $NAME$ from './$FILE_NAME$-component';
 
 const mapStateToProps = (stateProps, ownProps) => {};
 
