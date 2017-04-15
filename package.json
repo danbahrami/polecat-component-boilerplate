@@ -13,6 +13,8 @@
     "rcc": "rcc.js"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "param-case": "^2.1.1",
+    "pascal-case": "^2.0.1"
   }
 }
