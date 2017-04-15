@@ -242,7 +242,9 @@ Output:
     }
 
     render() {
-      return <div/>
+      return (
+        <div/>
+      );
     }
   }
 

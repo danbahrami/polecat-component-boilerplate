@@ -7,7 +7,9 @@ class $NAME$Component extends Component {
   }
 
   render() {
-    return <div/>
+    return (
+      <div/>
+    );
   }
 }
 
