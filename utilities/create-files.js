@@ -13,7 +13,7 @@ function writeFiles(path, fileNameMap) {
   return Promise.all(writes);
 };
 
-module.exports = function (path, templatePathMap, componentName) {
+function createFiles(path, templatePathMap, componentName) {
   var fileName = paramCase(componentName);
   var fileNames = Object.keys(templatePathMap);
 
@@ -43,3 +43,5 @@ module.exports = function (path, templatePathMap, componentName) {
         });
     });
 }
+
+module.exports = createFiles;

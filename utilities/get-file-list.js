@@ -1,4 +1,4 @@
-module.exports = function (fileName, connected, styled) {
+function getFileList(fileName, connected, styled) {
   var files = ['index.js', fileName + '-component.js', fileName + '-component-test.js'];
 
   if (connected) {
@@ -12,3 +12,5 @@ module.exports = function (fileName, connected, styled) {
 
   return files;
 }
+
+module.exports = getFileList;

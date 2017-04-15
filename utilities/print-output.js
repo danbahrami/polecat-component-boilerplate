@@ -1,6 +1,6 @@
 var paramCase = require('param-case');
 
-module.exports = function (path, componentName, files) {
+function printOutput(path, componentName, files) {
   var fileName = paramCase(componentName);
 
   console.log('Template created for ' + componentName + ':');
@@ -15,3 +15,5 @@ module.exports = function (path, componentName, files) {
 
   console.log('└── ...');
 }
+
+module.exports = printOutput;

@@ -1,4 +1,4 @@
-module.exports = function (template, componentName, fileName) {
+function ReplaceTemplateVariables(template, componentName, fileName) {
   var replacementMap = {
     '$NAME$': componentName,
     '$FILE_NAME$': fileName
@@ -8,3 +8,5 @@ module.exports = function (template, componentName, fileName) {
     return replacementMap[match];
   });
 }
+
+module.exports = ReplaceTemplateVariables;

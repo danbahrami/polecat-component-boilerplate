@@ -1,4 +1,4 @@
-module.exports = function (fileName, command, connected, styled) {
+function getTemplatePaths(fileName, command, connected, styled) {
   var templatePaths = {};
   
   templatePaths['index.js'] = 'index.js';
@@ -18,3 +18,5 @@ module.exports = function (fileName, command, connected, styled) {
 
   return templatePaths;
 };
+
+module.exports = getTemplatePaths;

@@ -1,5 +1,7 @@
 var fsp = require('fs-promise');
 
-module.exports = function (path) {
+function getTemplate(path) {
   return fsp.readFile(__dirname + '/../templates/' + path, {encoding:'utf8'});
 }
+
+module.exports = getTemplate;
