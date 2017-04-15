@@ -20,7 +20,7 @@ function createFiles(path, templatePathMap, componentName) {
   var templates = fileNames.map(function (fileName) {
     return getTemplate(templatePathMap[fileName])
       .then(function (template) {
-        return replaceTemplateVariables(template, componentName, fileName);
+        return replaceTemplateVariables(template, componentName);
       });
   });
 
