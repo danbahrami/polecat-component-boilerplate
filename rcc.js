@@ -1,11 +1,6 @@
 #!/usr/bin/env node
 var program = require('commander');
-var paramCase = require('param-case');
-var pascalCase = require('pascal-case');
-var getFileList = require('./utilities/get-file-list');
-var getTemplatePaths = require('./utilities/get-template-paths');
-var printOutput = require('./utilities/print-output');
-var createFiles = require('./utilities/create-files');
+var createBoilerplate = require('./create-boilerplate');
 
 /*
  * Initialise the program
@@ -18,24 +13,6 @@ program
   .parse(process.argv);
 
 /*
- * Store program details
+ * Run the program
  */
-var command = program._name;
-var path = program.args[0];
-var componentName = pascalCase(program.args[1]);
-var fileName = paramCase(program.args[1]);
-var connected = program.connected;
-var styled = program.styled;
-
-/*
- * Collate templates
- */
-var templatPathMap = getTemplatePaths(fileName, command, connected, styled);
-
-/*
- * Create boilerplate
- */
-createFiles(path, templatPathMap, componentName)
-  .then(function(files) {
-    printOutput(path, componentName, files);
-  });
+createBoilerplate('rcc', program);
