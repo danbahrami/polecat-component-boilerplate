@@ -11,5 +11,8 @@
   "bin": {
     "rfc": "rfc.js",
     "rcc": "rcc.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
   }
 }
