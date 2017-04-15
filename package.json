@@ -1,0 +1,15 @@
+{
+  "name": "polecat-component-boilerplate",
+  "version": "1.0.0",
+  "description": "A command line tool for creating React component boilerplates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan Bahrami <dan.bahrami@googlemail.com> (https://github.com/danbahrami)",
+  "license": "MIT",
+  "bin": {
+    "rfc": "rfc.js",
+    "rcc": "rcc.js"
+  }
+}
