@@ -28,7 +28,7 @@ var connected = program.connected;
 var styled = program.styled;
 
 /*
- * Compile templates
+ * Collate templates
  */
 var templatPathMap = getTemplatePaths(fileName, command, connected, styled);
 
