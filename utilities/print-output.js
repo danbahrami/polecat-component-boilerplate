@@ -1,16 +1,16 @@
 var paramCase = require('param-case');
 
 function printOutput(path, componentName, files) {
-  var fileName = paramCase(componentName);
+  var fileNames = Object.keys(files);
 
   console.log('Template created for ' + componentName + ':');
   console.log(path);
   console.log('├── ...');
-  console.log('├── ' + fileName);
+  console.log('├── ' + paramCase(componentName));
 
-  files.sort().map(function (file, index) {
-    var structure = (index === files.length -1) ? '│   └── ' : '│   ├── ';
-    console.log(structure + file);
+  fileNames.sort().map(function (fileName, index) {
+    var structure = (index === fileNames.length -1) ? '│   └── ' : '│   ├── ';
+    console.log(structure + fileName);
   });
 
   console.log('└── ...');

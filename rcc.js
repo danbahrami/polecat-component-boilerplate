@@ -37,5 +37,5 @@ var templatPathMap = getTemplatePaths(fileName, command, connected, styled);
  */
 createFiles(path, templatPathMap, componentName)
   .then(function(files) {
-    // printOutput(path, componentName, files);
+    printOutput(path, componentName, files);
   });
