@@ -16,6 +16,8 @@ function writeFiles(path, contentPathMap) {
 
     if (!fsp.existsSync(fullPath)) {
       return fsp.writeFile(fullPath, contentPathMap[fileName]);
+    } else {
+      contentPathMap[fileName] = null;
     }
   });
 

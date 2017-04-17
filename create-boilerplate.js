@@ -1,3 +1,4 @@
+var fsp = require('fs-promise');
 var paramCase = require('param-case');
 var pascalCase = require('pascal-case');
 var getTemplatePaths = require('./utilities/get-template-paths');
@@ -22,9 +23,11 @@ function createBoilerplate(command, program) {
   /*
    * Create boilerplate
    */
+  var pathExists = fsp.existsSync(path);
+
   createFiles(path, templatPathMap, componentName)
     .then(function(files) {
-      printOutput(path, componentName, files);
+      printOutput(path, componentName, files, pathExists);
     });
 }
 
