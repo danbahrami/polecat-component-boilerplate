@@ -33,10 +33,9 @@ function createFiles(path, templatePathMap, componentName) {
       }, {})
     })
     .then(function (data) {
-      var fullPath = path + '/' + fileName;
-      return fsp.mkdirs(fullPath)
+      return fsp.mkdirs(path)
         .then(function () {
-          return writeFiles(fullPath, data);
+          return writeFiles(path, data);
         })
         .then(function () {
           return data;
