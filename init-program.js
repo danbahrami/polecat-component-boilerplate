@@ -2,7 +2,7 @@ var program = require('commander');
 
 function init() {
   program
-    .version('1.0.0')
+    .version('1.1.0')
     .usage('[options] <path> <name>')
     .action(function (path, name) {
       if (typeof path !== 'string' || typeof name !== 'string') {
