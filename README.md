@@ -29,11 +29,9 @@ $ rfc . NavBar
 Boilerplate created for NavBar:
 .
 ├── ...
-├── nav-bar
-│   ├── index.js
-│   ├── nav-bar-component-test.js
-│   └── nav-bar-component.js
-└── ...
+├── index.js
+├── nav-bar-component-test.js
+└── nav-bar-component.js
 ```
 
 Output:
@@ -101,11 +99,9 @@ $ rcc . NavBar
 Boilerplate created for NavBar:
 .
 ├── ...
-├── nav-bar
-│   ├── index.js
-│   ├── nav-bar-component-test.js
-│   └── nav-bar-component.js
-└── ...
+├── index.js
+├── nav-bar-component-test.js
+└── nav-bar-component.js
 ```
 
 Output:
@@ -182,14 +178,12 @@ rfc -cs . NavBar
 Boilerplate created for NavBar:
 .
 ├── ...
-├── nav-bar
-│   ├── index.js
-│   ├── nav-bar-component-test.js
-│   ├── nav-bar-component.js
-│   ├── nav-bar-connector-test.js
-│   ├── nav-bar-connector.js
-│   └── nav-bar-style.scss
-└── ...
+├── index.js
+├── nav-bar-component-test.js
+├── nav-bar-component.js
+├── nav-bar-connector-test.js
+├── nav-bar-connector.js
+└── nav-bar-style.scss
 ```
 
 Output:

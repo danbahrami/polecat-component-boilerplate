@@ -1,6 +1,6 @@
+var fsp = require('fs-promise');
 var paramCase = require('param-case');
 var pascalCase = require('pascal-case');
-var getFileList = require('./utilities/get-file-list');
 var getTemplatePaths = require('./utilities/get-template-paths');
 var printOutput = require('./utilities/print-output');
 var createFiles = require('./utilities/create-files');
@@ -23,9 +23,11 @@ function createBoilerplate(command, program) {
   /*
    * Create boilerplate
    */
+  var pathExists = fsp.existsSync(path);
+
   createFiles(path, templatPathMap, componentName)
     .then(function(files) {
-      printOutput(path, componentName, files);
+      printOutput(path, componentName, files, pathExists);
     });
 }
 
