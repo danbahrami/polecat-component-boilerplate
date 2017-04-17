@@ -12,7 +12,11 @@ function writeFiles(path, contentPathMap) {
   var fileNames = Object.keys(contentPathMap);
 
   var writes = fileNames.map(function (fileName) {
-    return fsp.writeFile(path + '/' + fileName, contentPathMap[fileName]);
+    var fullPath = path + '/' + fileName;
+
+    if (!fsp.existsSync(fullPath)) {
+      return fsp.writeFile(fullPath, contentPathMap[fileName]);
+    }
   });
 
   return Promise.all(writes)
