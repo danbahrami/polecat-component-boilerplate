@@ -1,5 +1,3 @@
-var paramCase = require('param-case');
-
 function printOutput(path, componentName, files) {
   var fileNames = Object.keys(files);
 

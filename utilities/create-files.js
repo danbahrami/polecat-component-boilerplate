@@ -1,45 +1,35 @@
 var fsp = require('fs-promise');
-var paramCase = require('param-case');
-var getTemplate = require('./get-template');
-var replaceTemplateVariables = require('./replace-template-variables');
+var compileTemplates = require('./compile-templates');
 
-function writeFiles(path, fileNameMap) {
-  var fileNames = Object.keys(fileNameMap);
+function createRootDirectory(path, contentPathMap) {
+  return fsp.mkdirs(path)
+    .then(function () {
+      return contentPathMap;
+    });
+}
+
+function writeFiles(path, contentPathMap) {
+  var fileNames = Object.keys(contentPathMap);
 
   var writes = fileNames.map(function (fileName) {
-    return fsp.writeFile(path + '/' + fileName, fileNameMap[fileName]);
+    return fsp.writeFile(path + '/' + fileName, contentPathMap[fileName]);
   });
 
-  return Promise.all(writes);
+  return Promise.all(writes)
+    .then(function () {
+      return contentPathMap;
+    });
 };
 
 function createFiles(path, templatePathMap, componentName) {
-  var fileName = paramCase(componentName);
   var fileNames = Object.keys(templatePathMap);
 
-  var templates = fileNames.map(function (fileName) {
-    return getTemplate(templatePathMap[fileName])
-      .then(function (template) {
-        return replaceTemplateVariables(template, componentName);
-      });
-  });
-
-  return Promise.all(templates)
-    .then(function (data) {
-      return data.reduce(function (acc, val, index) {
-        acc[fileNames[index]] = val;
-
-        return acc;
-      }, {})
+  return compileTemplates(templatePathMap, componentName)
+    .then(function (contentPathMap) {
+      return createRootDirectory(path, contentPathMap);
     })
-    .then(function (data) {
-      return fsp.mkdirs(path)
-        .then(function () {
-          return writeFiles(path, data);
-        })
-        .then(function () {
-          return data;
-        });
+    .then(function (contentPathMap) {
+      return writeFiles(path, contentPathMap);
     });
 }
 

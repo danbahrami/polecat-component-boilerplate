@@ -1,6 +1,5 @@
 var paramCase = require('param-case');
 var pascalCase = require('pascal-case');
-var getFileList = require('./utilities/get-file-list');
 var getTemplatePaths = require('./utilities/get-template-paths');
 var printOutput = require('./utilities/print-output');
 var createFiles = require('./utilities/create-files');
