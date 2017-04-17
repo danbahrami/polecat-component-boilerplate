@@ -26,6 +26,7 @@ Example:
 Create a `NavBar` component boilerplate in the current directory...
 ```
 $ rfc . NavBar
+
 Boilerplate created for NavBar:
 .
 ├── ...
@@ -96,6 +97,7 @@ Example:
 Create a `NavBar` component boilerplate in the current directory...
 ```
 $ rcc . NavBar
+
 Boilerplate created for NavBar:
 .
 ├── ...
@@ -174,7 +176,8 @@ The output is the same as `rfc` except for the main component file.
 
 ## Full example
 ```
-rfc -cs . NavBar
+$ rfc -cs . NavBar
+
 Boilerplate created for NavBar:
 .
 ├── ...
