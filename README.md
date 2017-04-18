@@ -23,17 +23,19 @@ The usage for each command has the syntax `cmd [options] <path> <name>`.
 "rfc" stands for "React Functional Component" and it creates the boilerplate for a stateless functional component.
 
 Example:
-Create a `NavBar` component boilerplate in the current directory...
+Create a `NavBar` component boilerplate in a `./nav-bar` directory...
 ```
-$ rfc . NavBar
+$ rfc ./nav-bar NavBar
 
 Boilerplate created for NavBar:
-.
+./nav-bar
 ├── ...
 ├── index.js
 ├── nav-bar-component-test.js
 └── nav-bar-component.js
 ```
+
+*Note: Any non-existing directories in the path will be created but no existing files will be overwritten*
 
 Output:
 <details>
@@ -94,12 +96,12 @@ Output:
 "rcc" stands for "React Class Component" and it creates the boilerplate for a stateful ES6 class component.
 
 Example:
-Create a `NavBar` component boilerplate in the current directory...
+Create a `NavBar` component boilerplate in a `./nav-bar` directory...
 ```
-$ rcc . NavBar
+$ rcc ./nav-bar NavBar
 
 Boilerplate created for NavBar:
-.
+./nav-bar
 ├── ...
 ├── index.js
 ├── nav-bar-component-test.js
@@ -174,9 +176,11 @@ The output is the same as `rfc` except for the main component file.
 - `-s --styled` - includes a `...-style.scss` file and imports it from the main component
 - `-c --connected` - includes a Redux connector and exports it as the default export in `index.js`
 
+*Note: All options can be used with both `rfc` and `rcc` commands*
+
 ## Full example
 ```
-$ rfc -cs . NavBar
+$ rfc -cs ./nav-bar NavBar
 
 Boilerplate created for NavBar:
 .
