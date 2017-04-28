@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import $NAME$ from './$FILE_NAME$-component';
 
-const mapStateToProps = (stateProps, ownProps) => {};
+const mapStateToProps = (state, props) => {};
 
-const mapDispatchToProps = (dispatchProps, ownProps) => {};
+const mapDispatchToProps = (dispatch, props) => {};
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {};
 
