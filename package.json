@@ -4,7 +4,7 @@
   "description": "A command line tool for creating React component boilerplates",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danbahrami/polecat-component-boilerplate.git"
+    "url": "https://github.com/geckoboard/polecat-component-boilerplate.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
