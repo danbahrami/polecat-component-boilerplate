@@ -7,7 +7,7 @@ A command line tool for creating React component boilerplates in Polecat.
 To get started install globally via npm
 
 ```
-npm install -g danbahrami/polecat-component-boilerplate
+npm install -g geckoboard/polecat-component-boilerplate
 ```
 
 You now have two new global global commands `rfc` and `rcc`.
@@ -77,7 +77,8 @@ Output:
   <summary>nav-bar-component.js</summary>
 
   ```
-  import React, { PropTypes } from 'react';
+  import React from 'react';
+  import PropTypes from 'prop-types';
 
   const NavBarComponent = (props) => {
     return (
@@ -150,7 +151,8 @@ The output is the same as `rfc` except for the main component file.
   <summary>nav-bar-component.js</summary>
 
   ```
-  import React, { Component, PropTypes } from 'react';
+  import React, { Component } from 'react';
+  import PropTypes from 'prop-types';
 
   class NavBarComponent extends Component {
     constructor(props) {
@@ -234,7 +236,8 @@ Output:
   <summary>nav-bar-component.js</summary>
 
   ```
-  import React, { Component, PropTypes } from 'react';
+  import React, { Component } from 'react';
+  import PropTypes from 'prop-types';
   import styles from './nav-bar-style.scss';
 
   class NavBarComponent extends Component {
